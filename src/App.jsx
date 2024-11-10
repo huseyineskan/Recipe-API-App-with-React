@@ -1,7 +1,5 @@
-import "./App.css";
-
 function App() {
-  return <>Recipe App</>;
+  return <h1>Recipe App</h1>;
 }
 
 export default App;
