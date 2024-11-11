@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Asenkron işlemi `createAsyncThunk` ile tanımlayın
 export const getRandomRecipe = createAsyncThunk(
-  "getRecipe/fetchRandomRecipe",
+  "getRecipe/getRandomRecipe",
   async () => {
     const response = await axios.get(
       "https://www.themealdb.com/api/json/v1/1/random.php"

@@ -1,3 +1,5 @@
+import "./index.css";
+
 function App() {
   return <h1>Recipe App</h1>;
 }
