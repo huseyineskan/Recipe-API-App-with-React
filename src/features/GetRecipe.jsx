@@ -17,6 +17,13 @@ export function GetRecipe() {
         <div className="recipe">
           <div className="recipe-img">
             <img src={data[0].strMealThumb} />
+            <a
+              href={data[0].strYoutube}
+              target="_blank"
+              className="recipe-youtube-link-btn"
+            >
+              Youtube Video
+            </a>
           </div>
           <div className="recipe-informations">
             <div className="recipe-title">

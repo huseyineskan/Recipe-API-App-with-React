@@ -1,7 +1,14 @@
 import "./index.css";
+import GetRecipe from "./features/GetRecipe.jsx";
+import Header from "./features/Header.jsx";
 
 function App() {
-  return <h1>Recipe App</h1>;
+  return (
+    <>
+      <Header />
+      <GetRecipe />
+    </>
+  );
 }
 
 export default App;
