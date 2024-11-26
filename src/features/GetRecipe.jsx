@@ -19,6 +19,12 @@ export function GetRecipe() {
         .map(([_, value]) => value)
     : [];
 
+  const measures = data[0]
+    ? Object.entries(data[0])
+        .filter(([key, value]) => key.startsWith("strMeasure") && value)
+        .map(([_, value]) => value)
+    : [];
+
   return (
     <div className="container">
       {data[0] ? (
@@ -51,7 +57,9 @@ export function GetRecipe() {
                   <h3>Ingredients and Measure</h3>
                   <ul>
                     {ingredients.map((ingredient, index) => (
-                      <li key={index}>{ingredient}</li>
+                      <li key={index}>
+                        {ingredient} - {measures[index]}
+                      </li>
                     ))}
                   </ul>
                 </div>

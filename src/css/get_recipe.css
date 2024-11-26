@@ -62,7 +62,9 @@
 }
 
 .recipe-instructions p {
-  height: 280px;
+  min-height: 150px;
+  height: 200px;
+  max-height: 280px;
   overflow-y: auto;
 }
 
