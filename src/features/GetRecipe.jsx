@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getRandomRecipe } from "./getRecipeSlice";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import "../css/get_recipe.css";
 
 export function GetRecipe() {
@@ -16,7 +18,13 @@ export function GetRecipe() {
       {data[0] ? (
         <div className="recipe">
           <div className="recipe-img">
-            <img src={data[0].strMealThumb} />
+            <LazyLoadImage
+              src={data[0].strMealThumb}
+              effect="blur"
+              wrapperProps={{
+                style: { transitionDelay: "1s" },
+              }}
+            />
             <a
               href={data[0].strYoutube}
               target="_blank"
