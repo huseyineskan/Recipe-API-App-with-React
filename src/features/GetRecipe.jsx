@@ -13,6 +13,12 @@ export function GetRecipe() {
     dispatch(getRandomRecipe());
   }, []);
 
+  const ingredients = data[0]
+    ? Object.entries(data[0])
+        .filter(([key, value]) => key.startsWith("strIngredient") && value)
+        .map(([_, value]) => value)
+    : [];
+
   return (
     <div className="container">
       {data[0] ? (
@@ -43,10 +49,11 @@ export function GetRecipe() {
               <div className="recipe-ingrediens-measure">
                 <div className="repice-ingrediens">
                   <h3>Ingredients and Measure</h3>
-                  <p>
-                    {data[0].strIngredient1} -{" "}
-                    <span>{data[0].strMeasure1}</span>
-                  </p>
+                  <ul>
+                    {ingredients.map((ingredient, index) => (
+                      <li key={index}>{ingredient}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
               <div className="recipe-instructions">
