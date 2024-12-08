@@ -8,7 +8,7 @@ export const getRandomRecipe = createAsyncThunk(
     const response = await axios.get(
       "https://www.themealdb.com/api/json/v1/1/random.php"
     );
-    return response.data; // API'den dönen veriyi return ediyoruz
+    return response.data;
   }
 );
 

@@ -30,13 +30,7 @@ export function GetRecipe() {
       {data[0] ? (
         <div className="recipe">
           <div className="recipe-img">
-            <LazyLoadImage
-              src={data[0].strMealThumb}
-              effect="blur"
-              wrapperProps={{
-                style: { transitionDelay: "1s" },
-              }}
-            />
+            <LazyLoadImage src={data[0].strMealThumb} effect="blur" />
             <a
               href={data[0].strYoutube}
               target="_blank"
@@ -79,7 +73,9 @@ export function GetRecipe() {
           </button>
         </div>
       ) : (
-        <p>Loading</p>
+        <div id="loading-message">
+          <img src="../src/img/loading.png!bw700" alt="" />
+        </div>
       )}
     </div>
   );
