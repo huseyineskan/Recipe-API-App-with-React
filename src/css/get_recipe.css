@@ -103,4 +103,30 @@
   background-color: orange;
   color: #fff;
   cursor: pointer;
+  transition: background-color 300ms ease;
+}
+
+#get-recipe-btn:hover {
+  background-color: rgb(226, 148, 2);
+  transition: background-color 300ms ease;
+}
+
+@media screen and (max-width: 768px) {
+  .recipe {
+    flex-wrap: wrap;
+  }
+
+  .recipe > div {
+    width: 100%;
+  }
+
+  .recipe-informations {
+    margin-top: 20px;
+    margin-bottom: 150px;
+  }
+
+  .recipe-instructions p {
+    height: auto;
+    max-height: 700px;
+  }
 }
